@@ -1,5 +1,5 @@
 {
-  "name": "deshraj.github.io",
+  "name": "ayshrv.github.io",
   "version": "1.0.0",
   "description": "Node.js packages",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DESHRAJ/deshraj.github.io.git"
+    "url": "git+https://github.com/ayshrv/ayshrv.github.io.git"
   },
   "keywords": [
-    "deshraj"
+    "ayush"
   ],
-  "author": "Deshraj",
+  "author": "Ayush",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DESHRAJ/deshraj.github.io/issues"
+    "url": "https://github.com/ayshrv/ayshrv.github.io/issues"
   },
-  "homepage": "https://github.com/DESHRAJ/deshraj.github.io#readme"
+  "homepage": "https://github.com/ayshrv/ayshrv.github.io#readme"
 }
