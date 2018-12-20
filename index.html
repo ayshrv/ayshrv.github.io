@@ -186,11 +186,11 @@ a:hover:not(.btn-social-icon):not(.github-button):not(.link-btn) {
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a target="_blank" href="http://github.com/ayshrv">Github</a></li>
+          <li><a href="#achievements">Achievements</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Experience</a></li>
           <!-- <li><a href="#projects">Projects</a></li> -->
           <li><a href="#education">Education</a></li>
-          <!-- <li><a href="#achievements">Achievements</a></li> -->
           <li><a href="/static/docs/AyushCV.pdf" target="_blank">CV</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -201,8 +201,9 @@ a:hover:not(.btn-social-icon):not(.github-button):not(.link-btn) {
 
   <div class="container">
     <div id="about"></div>
+    <p></p>
     <div id="news"></div>
-    <!-- <div id="achievements"></div> -->
+    <div id="achievements"></div>
     <div id="publications"></div>
     <!-- <div id="projects"></div> -->
     <div id="experience"></div>
@@ -220,12 +221,12 @@ a:hover:not(.btn-social-icon):not(.github-button):not(.link-btn) {
     $( document ).ready(function() {
       $("#about").load("templates/about.html");
       $("#news").load("templates/news.html");
-      $("#experience").load("templates/experience.html");
+      $("#achievements").load("templates/achievements.html");
       $("#publications").load("templates/publications.html");
+      $("#experience").load("templates/experience.html");
       // $("#projects").load("templates/projects.html");
       // $("#skills").load("templates/skills.html");
       $("#education").load("templates/education.html");
-      // $("#achievements").load("templates/achievements.html");
       $("#contact").load("templates/contact.html");
     });
   </script>
