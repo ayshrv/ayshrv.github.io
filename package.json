@@ -11,9 +11,9 @@
     "url": "git+https://github.com/ayshrv/ayshrv.github.io.git"
   },
   "keywords": [
-    "ayush"
+    "ayush", "shrivastava", 
   ],
-  "author": "Ayush",
+  "author": "Ayush Shrivastava",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ayshrv/ayshrv.github.io/issues"
