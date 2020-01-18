@@ -18,7 +18,7 @@ email: ayshrv@gatech.edu
 description: >- # this means to ignore newlines until "baseurl:"
 Ayush is a first year Computer Science MS student at Georgia Tech, advised by Prof. Devi Parikh. His research interests lie in deep learning at the intersection of computer vision and natural language processing.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ayshrv.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ayshrv.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ayshrv
 github_username:  ayshrv
 
