@@ -64,3 +64,14 @@
     padding-bottom: 5px;
   }
 </style>
+
+<script>
+  $(document).ready(function(){
+    $("#read-more").on("hide.bs.collapse", function(){
+      $(".btn").html('Read More');
+    });
+    $("#read-more").on("show.bs.collapse", function(){
+      $(".btn").html('Read Less');
+    });
+  });
+</script>
