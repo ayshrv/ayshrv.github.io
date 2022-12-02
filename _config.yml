@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Ayush Shrivastava
-email: ayshrv@gatech.edu
+email: ayshrv@umich.edu
 description: >- # this means to ignore newlines until "baseurl:"
- Ayush is a second year Computer Science MS student at Georgia Tech, advised by Prof. Devi Parikh. His research interests lie in deep learning at the intersection of computer vision and natural language processing.
+ Ayush is a second year Computer Science PhD student at University of Michigan, advised by Prof. Andrew Owens. His research interests lie in Computer Vision and Multimodal Learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ayshrv.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ayshrv
