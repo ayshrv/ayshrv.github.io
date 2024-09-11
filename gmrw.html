@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Self-Supervised Any-Point Tracking by Contrastive Random Walks">
+  <meta name="keywords" content="GMRW, Tracking, CRW, Self-Supervised">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self-Supervised Any-Point Tracking by Contrastive Random Walks</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/nerfies/css/bulma.min.css">
+  <link rel="stylesheet" href="/static/nerfiescss/bulma-carousel.min.css">
+  <link rel="stylesheet" href="/static/nerfies/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="/static/nerfies/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="/static/nerfies/css/index.css">
+  <link rel="icon" href="/static/gmrw/img/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="/static/nerfies/js/fontawesome.all.min.js"></script>
+  <script src="/static/nerfies/js/bulma-carousel.min.js"></script>
+  <script src="/static/nerfies/js/bulma-slider.min.js"></script>
+  <script src="/static/nerfies/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Self-Supervised Any-Point Tracking by Contrastive Random Walks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ayshrv.com">Ayush Shrivastava</a>,</span>
+            <span class="author-block">
+              <a href="https://andrewowens.com/">Andrew Owens</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Michigan</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ECCV 2024</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ayshrv/gmrw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop is-gapless">
+    <div class="hero-body columns is-paddingless">
+      <div class="column is-half is-paddingless is-gapless">
+      <video id="teaser" autoplay muted loop playsinline height="50%">
+        <source src="/static/gmrw/videos/car-turn.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+      <div class="column is-half is-paddingless is-gapless">
+      <video id="teaser" autoplay muted loop playsinline height="50%">
+        <source src="/static/gmrw/videos/hockey.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="column is-gapless">
+      <h2 class="subtitle is-6 has-text-centered">
+        Global Matching Random Walks (GMRW): a simple, self-supervised method for tracking any point in a video.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We present a simple, self-supervised approach to the Tracking Any Point (TAP) problem. 
+          </p>
+          <p>
+          We train a global matching transformer to find cycle consistent tracks through video via contrastive random walks, using the transformer's attention-based global matching to define the transition matrices for a random walk on a space-time graph. The ability to perform “all pairs” comparisons between points allows the model to obtain high spatial precision and to obtain a strong contrastive learning signal, while avoiding many of the complexities of recent approaches (such as coarse-to-fine matching). To do this, we propose a number of design decisions that allow global matching architectures to be trained through self-supervision using cycle consistency. For example, we identify that transformer-based methods are sensitive to shortcut solutions, and propose a data augmentation scheme to address them. 
+          </p>
+          <p>
+          Our method achieves strong performance on the TapVid benchmarks, outperforming previous self-supervised tracking methods, such as DIFT, and is competitive with several supervised methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+        <div class="content">
+          <h2 class="title is-3">Method</h2>
+          <p>
+            We propose a simple and effective self-supervised approach to the Tracking Any Point problem. We adapt the global matching transformer architecture to learn through cycle consistency: i.e., tracking forward in time, then backward, should take us back to where we started. In lieu of labeled data, we supervise the model via the contrastive random walk, using the self-attention from global matching to define the transition matrix for a random walk that moves between points in adjacent frames. This “all pairs” matching mechanism allows us to define transition matrices that consider large numbers of points at once, thereby increasing spatial precision and enabling us to obtain a richer learning signal by considering a large number of paths through the space-time graph on which the random walk is performed. Additionally, we identify that global matching architectures are susceptible to shortcut solutions (e.g., due to their use of positional encodings), and that previously proposed methods for addressing these shortcuts are insufficient. We therefore propose a type of data augmentation that removes these shortcuts.
+          </p>
+          <div class="image is-centered">
+          <img class="is-centered" src="/static/gmrw/img/model.png" width="100%">
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+        <div class="content">
+          <h2 class="title is-3">Results</h2>
+          <div class="columns is-gapless is-paddingless is-marginless">
+            <div class="column is-one-third is-paddingless is-marginless is-gapless">
+            <video autoplay muted loop playsinline height="50%">
+              <source src="/static/gmrw/videos/drift-chicane.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+            <div class="column is-one-third is-paddingless is-gapless">
+            <video autoplay muted loop playsinline height="50%">
+              <source src="/static/gmrw/videos/bear.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+            <div class="column is-one-third is-paddingless">
+              <video autoplay muted loop playsinline height="50%">
+                <source src="/static/gmrw/videos/drift-turn.mp4"
+                        type="video/mp4">
+              </video>
+              </div>
+          </div>
+          <div class="columns is-gapless is-marginless">
+            <div class="column is-one-third is-paddingless ">
+            <video autoplay muted loop playsinline height="50%">
+              <source src="/static/gmrw/videos/drift-chicane.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+            <div class="column is-one-third is-paddingless">
+            <video autoplay muted loop playsinline height="50%">
+              <source src="/static/gmrw/videos/hockey.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+            <div class="column is-one-third is-paddingless">
+              <video autoplay muted loop playsinline height="50%">
+                <source src="/static/gmrw/videos/drift-turn.mp4"
+                        type="video/mp4">
+              </video>
+              </div>
+          </div>
+          
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{shrivastava2024gmrw,
+      title     = {Self-Supervised Any-Point Tracking by Contrastive Random Walks},
+      author    = {Shrivastava, Ayush and Owens, Andrew},
+      journal   = {European Conference on Computer Vision (ECCV)},
+      year      = {2024},
+      url       = {https://arxiv.org/abs/},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>,
+            and is written by <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project. You are free to use the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website, but please keep these links in the footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
