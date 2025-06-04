@@ -30,7 +30,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="/static/nerfies/css/index.css">
-  <link rel="icon" href="/static/gmrw/img/favicon.png">
+  <link rel="icon" href="/static/cmrw/img/favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="/static/nerfies/js/fontawesome.all.min.js"></script>
@@ -65,23 +65,23 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/pdf/2506.03148"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper (Coming Soon)</span>
+                  <span>Paper</span>
                 </a>
               </span>
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/2409.16288"
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2506.03148"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span> -->
+              </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
@@ -93,8 +93,8 @@
                 </a>
               </span> -->
               <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/ayshrv/gmrw"
+              <span class="link-block">
+                <a href="https://github.com/ayshrv/cmrw"
                    target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -102,7 +102,7 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span> -->
+              </span>
             </div>
 
           </div>
@@ -113,3 +113,103 @@
 </section>
 
 
+<section class="hero teaser">
+  <div class="container is-max-desktop is-gapless">
+    <div class="hero-body columns is-paddingless">
+      <!-- <div class="column is-half is-paddingless is-gapless">
+      <video id="teaser" autoplay muted loop playsinline height="50%">
+        <source src="/static/gmrw/videos/car-turn.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+      <div class="column is-half is-paddingless is-gapless">
+      <video id="teaser" autoplay muted loop playsinline height="50%">
+        <source src="/static/gmrw/videos/hockey.mp4"
+                type="video/mp4">
+      </video>
+      </div> -->
+    </div>
+    <div class="column is-gapless">
+      <h1 class="subtitle is-5 has-text-centered">
+        <b>Cross Modal Random Walks (CMRW)</b>: We present a method for cross-modal matching, trained entirely through self-supervision using a simple formulation based on contrastive random walks.
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present a method for finding cross-modal space-time correspondences.  
+            Given two images from different visual modalities, such as an RGB image and a depth map, our model identifies which pairs of pixels correspond to the same physical points in the scene. To solve this problem, we extend the contrastive random walk framework to simultaneously learn cycle-consistent feature representations for both cross-modal and intra-modal matching. The resulting model is simple and has no explicit photo-consistency assumptions. It can be trained entirely using unlabeled data, without the need for any spatially aligned multimodal image pairs. We evaluate our method on both geometric and semantic correspondence tasks. For geometric matching, we consider challenging tasks such as RGB-to-depth and RGB-to-thermal matching (and vice versa); for semantic matching, we evaluate on photo-sketch and cross-style image alignment. Our method achieves strong performance across all benchmarks.
+          
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+        <div class="content">
+          <h2 class="title is-3">Method</h2>
+          <p>
+            We learn to find pixel-level correspondences between images that may differ in sensory modality, time, and scene position. Given images from two modalities (e.g., unpaired RGB and depth images from the same scene), we perform a contrastive random walk on a graph whose nodes come from patches within the two images using a global matching transformer architecture (<a href="/gmrw">GMRW</a>). We simultaneously perform auxiliary intra-modal random walks within each modality's augmented crops of images to improve the model's ability to avoid local minima during optimization. Through this process, we learn to match in both directions (e.g., RGB-to-depth and depth-to-RGB).
+          </p>
+          <div class="image is-centered mt-6">
+          <img class="is-centered" src="/static/cmrw/img/cmrw_method.png" width="100%">
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{shrivastava2025cmrw,
+      title     = {Self-Supervised Spatial Correspondence Across Modalities},
+      author    = {Shrivastava, Ayush and Owens, Andrew},
+      journal   = {CVPR},
+      year      = {2025},
+      url       = {https://arxiv.org/abs/2506.03148},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>,
+            and is written by <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project. You are free to use the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website, but please keep these links in the footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
