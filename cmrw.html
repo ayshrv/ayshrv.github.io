@@ -164,9 +164,13 @@
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3">Method</h2>
+        <!-- Any description here -->
+      </div>
 
+    </div>
         <div class="content">
-          <h2 class="title is-3">Method</h2>
           <p>
             We learn to find pixel-level correspondences between images that may differ in sensory modality, time, and scene position. Given images from two modalities (e.g., unpaired RGB and depth images from the same scene), we perform a contrastive random walk on a graph whose nodes come from patches within the two images using a global matching transformer architecture (<a href="/gmrw">GMRW</a>). We simultaneously perform auxiliary intra-modal random walks within each modality's augmented crops of images to improve the model's ability to avoid local minima during optimization. Through this process, we learn to match in both directions (e.g., RGB-to-depth and depth-to-RGB).
           </p>
@@ -179,6 +183,197 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3">Cross-style Image Matching</h2>
+        <!-- Any description here -->
+      </div>
+    </div>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <div class="grid2x2">
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/dog1_1.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/rabbit.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/man1.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/lizard.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="grid2x2">
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/camera.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/mushroom1.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/dog1_2.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/sheep.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="grid2x2">
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/squirel.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/dog2.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/man2.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-with-label">
+              <div class="video-label">Text input: heavy punch, high quality.</div>
+              <video autoplay muted loop playsinline><source src="/static/cmrw/videos/mushroom2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+      <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.slider-container {
+  position: relative;
+  width: 140%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 750px;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.grid2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.video-with-label {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.video-with-label video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #eee;
+  display: block;
+}
+
+.video-label {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #222;
+  background: rgba(255,255,255,0.85);
+  padding: 4px 0 2px 0;
+  height: 15%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 16px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s;
+  z-index: 3;
+}
+
+.slider-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+</style>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function moveSlide(direction) {
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  const slider = document.querySelector('.slider');
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.slider');
+  slider.style.width = `${totalSlides * 100}%`;
+  slides.forEach(slide => {
+    slide.style.width = `${100 / totalSlides}%`;
+  });
+});
+</script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
