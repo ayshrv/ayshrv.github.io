@@ -254,10 +254,10 @@
           </div>
         </div>
       </div>
-      
       <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
       <button class="slider-button next" onclick="moveSlide(1)">❯</button>
     </div>
+    <div class="slider-dots"></div>
   </div>
 </section>
 
@@ -268,7 +268,7 @@
   max-width: 1300px;
   margin: 0 auto;
   overflow: hidden;
-  height: 750px;
+  height: 710px;
   min-height: 600px;
   display: flex;
   align-items: center;
@@ -353,6 +353,27 @@
 
 .prev { left: 0; }
 .next { right: 0; }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0 0 0;
+  gap: 10px;
+}
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  opacity: 0.5;
+  transition: background 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+.slider-dot.active {
+  background: #222;
+  opacity: 1;
+}
 </style>
 
 <script>
@@ -364,6 +385,14 @@ function moveSlide(direction) {
   currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
   const slider = document.querySelector('.slider');
   slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  updateDots();
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.slider-dot');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentSlide);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -372,6 +401,19 @@ document.addEventListener('DOMContentLoaded', function() {
   slides.forEach(slide => {
     slide.style.width = `${100 / totalSlides}%`;
   });
+
+  // Dots
+  const dotsContainer = document.querySelector('.slider-dots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => {
+      currentSlide = i;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    });
+    dotsContainer.appendChild(dot);
+  }
 });
 </script>
 
