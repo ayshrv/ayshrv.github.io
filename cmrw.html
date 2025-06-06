@@ -128,22 +128,25 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop is-gapless">
-    <div class="hero-body columns is-paddingless">
-      <div class="column is-paddingless is-gapless" align="center">
-        <img class="thumb" src="/static/cmrw/img/teaser.png" width="100%" alt="CMRW teaser image">
+    <div class="hero-body">
+      <div class="teaser-grid-2x2">
+        <img class="thumb" src="/static/cmrw/img/teaser1.png" width="100%" alt="CMRW teaser image">
+        <img class="thumb" src="/static/cmrw/img/teaser3.png" width="77%" alt="CMRW teaser image">
+        <img class="thumb" src="/static/cmrw/img/teaser2.png" width="100%" alt="CMRW teaser image">
+        <img class="thumb" src="/static/cmrw/img/teaser4.png" width="77%" alt="CMRW teaser image">
       </div>
-      <!-- <div class="column is-half is-paddingless is-gapless">
-      <video id="teaser" autoplay muted loop playsinline height="50%">
-        <source src="/static/gmrw/videos/car-turn.mp4"
-                type="video/mp4">
-      </video>
-      </div> -->
-      <!-- <div class="column is-half is-paddingless is-gapless">
-      <video id="teaser" autoplay muted loop playsinline height="50%">
-        <source src="/static/gmrw/videos/hockey.mp4"
-                type="video/mp4">
-      </video>
-      </div> -->
+      <div class="columns mt-4">
+        <div class="column is-half has-text-centered">
+          <p>
+            <b>Geometric Correspondence</b> 
+          </p>
+        </div>
+        <div class="column is-5 has-text-centered">
+          <p>
+            <b>Semantic Correspondence</b> 
+          </p>
+        </div>
+      </div>
     </div>
     <div class="column is-gapless">
       <h1 class="subtitle is-5 has-text-centered">
@@ -188,55 +191,22 @@
     </div>
         <div class="content">
           <p>
-            We learn to find pixel-level correspondences between images that may differ in sensory modality, time, and scene position. Given images from two modalities (e.g., unpaired RGB and depth images from the same scene), we perform a contrastive random walk on a graph whose nodes come from patches within the two images using a global matching transformer architecture (<a href="/gmrw">GMRW</a>). We simultaneously perform auxiliary intra-modal random walks within each modality's augmented crops of images to improve the model's ability to avoid local minima during optimization. Through this process, we learn to match in both directions (e.g., RGB-to-depth and depth-to-RGB).
+            We learn to find pixel-level correspondences between images that may differ in sensory modality, time, and scene position. 
+            Given images from two modalities (e.g., unpaired RGB and depth images from the same scene), 
+            we perform a <span style="color: #9954e8;"><b>contrastive random walk</b></span> on a graph whose nodes come from patches within the two images using a global matching transformer architecture<sup id="gmrw-footnote-ref"><a href="#gmrw-footnote">1</a></sup>.
+            We simultaneously perform auxiliary <span style="color: #ff9040;"><b>intra-modal random walks</b></span> within each modality's augmented crops of images to improve the model's ability to avoid local minima during optimization. Through this process, we learn to match in both directions (e.g., RGB-to-depth and depth-to-RGB).
           </p>
           <div class="image is-centered mt-6">
           <img class="is-centered" src="/static/cmrw/img/cmrw_method.png" width="100%" alt="CMRW method diagram">
           </div>
         </div>
+        <div class="content" style="font-size: 0.85em;">
+          <p id="gmrw-footnote"><sup>1</sup> <a href="/gmrw">Self-Supervised Any-Point Tracking by Contrastive Random Walks</a></p>
+        </div>
     </div>
+    
   </div>
 </section>
-
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="content">
-        <h2 class="title is-4">4x4 Grid Example</h2>
-      </div>
-    </div>
-    <div class="slider-section">
-      <div class="slider-container">
-        <div class="slider">
-          <div class="slide">
-            <div class="grid4x4">
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder1.mp4" type="video/mp4"></video><div class="video-label">Text 1</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder2.mp4" type="video/mp4"></video><div class="video-label">Text 2</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder3.mp4" type="video/mp4"></video><div class="video-label">Text 3</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder4.mp4" type="video/mp4"></video><div class="video-label">Text 4</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder5.mp4" type="video/mp4"></video><div class="video-label">Text 5</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder6.mp4" type="video/mp4"></video><div class="video-label">Text 6</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder7.mp4" type="video/mp4"></video><div class="video-label">Text 7</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder8.mp4" type="video/mp4"></video><div class="video-label">Text 8</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder9.mp4" type="video/mp4"></video><div class="video-label">Text 9</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder10.mp4" type="video/mp4"></video><div class="video-label">Text 10</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder11.mp4" type="video/mp4"></video><div class="video-label">Text 11</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder12.mp4" type="video/mp4"></video><div class="video-label">Text 12</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder13.mp4" type="video/mp4"></video><div class="video-label">Text 13</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder14.mp4" type="video/mp4"></video><div class="video-label">Text 14</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder15.mp4" type="video/mp4"></video><div class="video-label">Text 15</div></div>
-              <div class="video-with-label"><video autoplay muted loop playsinline><source src="/static/cmrw/videos/placeholder16.mp4" type="video/mp4"></video><div class="video-label">Text 16</div></div>
-            </div>
-          </div>
-        </div>
-        <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
-        <button class="slider-button next" onclick="moveSlide(1)">❯</button>
-      </div>
-      <div class="slider-dots"></div>
-    </div>
-  </div>
-</section> -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -461,6 +431,11 @@
         <h2 class="title is-4">Cross-style Image Matching</h2>
         <!-- Any description here -->
       </div>
+    </div>
+    <div class="content">
+      <p>
+        Given a text prompt, we generate images in various styles using a text-to-image model. Each image is conditioned on a base prompt combined with a style modifier. Our model is then used to find correspondences between the generated images.
+      </p>
     </div>
     <div class="slider-section">
       <div class="slider-container">
@@ -691,6 +666,34 @@
   width: auto;
   height: 100%;
   object-fit: contain;
+}
+
+.teaser-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero.teaser .hero-body {
+  margin-bottom: 0.5rem; /* Reduce as needed */
+  padding-bottom: 1.5rem; /* Reduce as needed */
+}
+
+.hero.teaser .column.is-gapless {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.hero.teaser .subtitle {
+  margin-top: 0.5rem !important;
+}
+
+.hero.teaser .mt-4 {
+  margin-top: 0.5rem !important; /* or 0 if you want no space */
 }
 
 </style>
