@@ -238,7 +238,6 @@
   </div>
 </section> -->
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -247,6 +246,54 @@
         <p class="mb-6"></p>
       </div>
     </div>
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-4">RGB-Depth Matching</h2>
+        <!-- Any description here -->
+      </div>
+    </div>
+    <div class="slider-section" id="rgb-depth-slider">
+      <div class="slider-container" style="max-width: 1200px;">
+        <div class="slider">
+          <div class="slide">
+            <div class="grid1x1-depth">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_depth/rgb_depth_grid_1x3_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-depth">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_depth/rgb_depth_grid_1x3_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-depth">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_depth/rgb_depth_grid_1x3_3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+        <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+      </div>
+      <!-- <p style="text-align: center; ">(Frame transition: 1.5 sec)</p> -->
+      <div class="slider-dots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="content">
         <h2 class="title is-4">RGB-Thermal Matching</h2>
@@ -521,6 +568,17 @@
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.grid1x1-depth {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .grid1x1-small {
