@@ -96,6 +96,7 @@
               <span class="link-block">
                 <a href="https://github.com/ayshrv/cmrw"
                    target="_blank"
+                   rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -129,7 +130,7 @@
   <div class="container is-max-desktop is-gapless">
     <div class="hero-body columns is-paddingless">
       <div class="column is-paddingless is-gapless" align="center">
-        <img class="thumb" src="/static/cmrw/img/teaser.png" width="100%">
+        <img class="thumb" src="/static/cmrw/img/teaser.png" width="100%" alt="CMRW teaser image">
       </div>
       <!-- <div class="column is-half is-paddingless is-gapless">
       <video id="teaser" autoplay muted loop playsinline height="50%">
@@ -190,7 +191,7 @@
             We learn to find pixel-level correspondences between images that may differ in sensory modality, time, and scene position. Given images from two modalities (e.g., unpaired RGB and depth images from the same scene), we perform a contrastive random walk on a graph whose nodes come from patches within the two images using a global matching transformer architecture (<a href="/gmrw">GMRW</a>). We simultaneously perform auxiliary intra-modal random walks within each modality's augmented crops of images to improve the model's ability to avoid local minima during optimization. Through this process, we learn to match in both directions (e.g., RGB-to-depth and depth-to-RGB).
           </p>
           <div class="image is-centered mt-6">
-          <img class="is-centered" src="/static/cmrw/img/cmrw_method.png" width="100%">
+          <img class="is-centered" src="/static/cmrw/img/cmrw_method.png" width="100%" alt="CMRW method diagram">
           </div>
         </div>
     </div>
@@ -252,32 +253,77 @@
         <!-- Any description here -->
       </div>
     </div>
-    <div class="slider-section">
-      <div class="slider-container">
+    <div class="slider-section" id="rgb-thermal-slider">
+      <div class="slider-container" style="max-width: 1100px;">
         <div class="slider">
           <div class="slide">
-            <div class="grid1x1">
+            <div class="grid1x1-small">
               <div class="video-with-label">
                 <video autoplay muted loop playsinline>
-                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_batch_1.mp4" type="video/mp4">
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_1.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
           </div>
           <div class="slide">
-            <div class="grid1x1">
+            <div class="grid1x1-small">
               <div class="video-with-label">
                 <video autoplay muted loop playsinline>
-                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_batch_2.mp4" type="video/mp4">
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_2.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
           </div>
           <div class="slide">
-            <div class="grid1x1">
+            <div class="grid1x1-small">
               <div class="video-with-label">
                 <video autoplay muted loop playsinline>
-                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_batch_3.mp4" type="video/mp4">
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-small">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-small">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_5.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-small">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_6.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-small">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_7.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-small">
+              <div class="video-with-label">
+                <video autoplay muted loop playsinline>
+                  <source src="/static/cmrw/videos/rgb_thermal/rgb_thermal_grid_1x3_8.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
@@ -286,7 +332,7 @@
         <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
         <button class="slider-button next" onclick="moveSlide(1)">❯</button>
       </div>
-      <p style="text-align: center; ">(Frame transition: 1 sec)</p>
+      <!-- <p style="text-align: center; ">(Frame transition: 1.5 sec)</p> -->
       <div class="slider-dots"></div>
     </div>
   </div>
@@ -458,7 +504,7 @@
   justify-content: center;
   left: 50%;
   transform: translateX(-50%);
-  max-height: 700px;
+  max-height: 1000px;
 }
 
 .slider {
@@ -477,13 +523,13 @@
   width: 100%;
 }
 
-.grid1x1 {
+.grid1x1-small {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 16px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 100%;
   margin: 0 auto;
 }
