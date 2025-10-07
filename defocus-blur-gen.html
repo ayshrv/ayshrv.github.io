@@ -37,6 +37,21 @@
   <!-- <script src="/static/nerfies/js/bulma-carousel.min.js"></script> -->
   <!-- <script src="/static/nerfies/js/bulma-slider.min.js"></script> -->
   <script src="/static/nerfies/js/index.js"></script>
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 
@@ -135,6 +150,106 @@
     </div>
   </div>
 </section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop is-gapless">
+    <div class="column is-gapless">
+      <h1 class="subtitle is-5 has-text-centered">
+        <b>TL;DR:</b> We propose a text-to-image model that precisely controls the amount and location of defocus blur in generated images while preserving the scene content.
+      </h1>
+    </div>
+    <br>
+    <div class="hero-body">
+      <div class="teaser-grid-2x2">
+        <img class="thumb" src="/static/defocus-blur-gen/imgs/teaser1.png" width="95%" alt="teaser image">
+        <div class="column has-text-centered">
+          <b>(a) Text-to-Image Methods:</b> Prior methods like Camera-Settings-as-Tokens<sup id="csat-footnote-ref"><a href="#csat">1</a></sup>, fail to maintain scene content when adjusting aperture.
+        </div>
+        <img class="thumb" src="/static/defocus-blur-gen/imgs/teaser2.png" width="95%" alt="teaser image">
+        <div class="column has-text-centered">
+          <b>(b) Ours (Text-to-Image + Lens Model): </b> Our model produces images with controllable defocus blur while preserving the scene. Each image reflects the specified aperture and focus distance: lower focus distances sharpen the foreground, while higher ones shift focus to the background. The orange bar <span style="color: #c04f14;"><b>[</b></span> marks the in-focus region. Higher f-stops result in reduced blur, producing an all-in-focus image at f/22. 
+        </div>
+        <!-- <img class="thumb" src="/static/cmrw/img/teaser3.png" width="77%" alt="CMRW teaser image">
+        <img class="thumb" src="/static/cmrw/img/teaser2.png" width="100%" alt="CMRW teaser image">
+        <img class="thumb" src="/static/cmrw/img/teaser4.png" width="77%" alt="CMRW teaser image"> -->
+      </div>
+    <!-- <div class="column is-gapless"> -->
+      <!-- <h1 class="subtitle is-6 has-text-centered"> -->
+        <!-- <b>(a)</b> Prior methods like Camera-Settings-as-Tokens<sup id="csat-footnote-ref"><a href="#csat">1</a></sup>, fail to maintain scene content when adjusting aperture. -->
+        <!-- <b>(b)</b> Our model produces images with controllable defocus blur while preserving the scene. Each image reflects the specified aperture and focus distance: lower focus distances sharpen the foreground, while higher ones shift focus to the background. The orange bar <span style="color: #c04f14;"><b>[</b></span> marks the in-focus region. Higher f-stops result in reduced blur, producing an all-in-focus image at f/22. -->
+      <!-- </h1> -->
+    <!-- </div> -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Current text-to-image diffusion models excel at generating diverse, high-quality images, yet they struggle to incorporate fine-grained camera metadata such as precise aperture settings. In this work, we introduce a novel text-to-image diffusion framework that leverages camera metadata, or EXIF data, which is often embedded in image files, with an emphasis on generating controllable lens blur. Our method mimics the physical image formation process by first generating an all-in-focus image, estimating its monocular depth, predicting a plausible focus distance with a novel focus distance transformer, and then forming a defocused image with an existing differentiable lens blur model<sup id="taf-footnote-ref"><a href="#taf">2</a></sup>. Gradients flow backwards through this whole process, allowing us to learn without explicit supervision to generate defocus effects based on content elements and the provided EXIF data. At inference time, this enables precise interactive user control over defocus effects while preserving scene contents, which is not achievable with existing diffusion models. Experimental results demonstrate that our model enables superior fine-grained control without altering the depicted scene.
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3">Method</h2>
+        <!-- Any description here -->
+      </div>
+
+    </div>
+        <div class="content">
+          <div class="image is-centered mt-6">
+            <img id="method-arch" class="is-centered" src="/static/defocus-blur-gen/imgs/architecture.png" alt="method diagram" style="width: 90% !important; height: auto !important; display: block; margin: 1% auto;">
+            </div>
+          <p>
+            <!-- We propose an image generation method that enables precise control over blur intensity and location within an image.  -->
+            Our model obtains its supervision from a differentiable lens model and training examples of images with shallow and deep depth-of-field. We train our model to generate an all-in-focus image using $G_{\theta}$. A depth model then predicts depth for this image, which, along with the image itself, is fed into a model that estimates the focus distance $f_d$ and depth scale $f_s$. Finally, a lens model combines EXIF data with these predictions to apply spatially varying blur, generating the final image. We train the all-in-focus generator using unsupervised DMD2<sup id="dmd2-footnote-ref"><a href="#dmd2">3</a></sup> losses on our unpaired Deep DoF dataset and optimize the entire pipeline with DMD2 losses on the unpaired Shallow DoF dataset.
+          </p>
+          
+        </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3">Related Work</h2>
+        <!-- Any description here -->
+      </div>
+
+    </div>
+        <div class="content" style="font-size: 0.95em;">
+          <p id="csat">[1] <a href="https://camera-settings-as-tokens.github.io/" target="_blank">Camera Settings as Tokens: Modeling Photography on Latent Diffusion Models</a></p>
+          <p id="taf">[2] <a href="https://taf.mpi-inf.mpg.de/" target="_blank">An Implicit Neural Representation for the Image Stack: Depth, All in Focus, and High Dynamic Range</a></p>
+          <p id="dmd2">[3] <a href="https://tianweiy.github.io/dmd2/" target="_blank">Improved Distribution Matching Distillation for Fast Image Synthesis</a></p>
+        </div>
+    </div>
+    
+  </div>
+</section>
+
 
 
 <section class="section" id="bibtex">
