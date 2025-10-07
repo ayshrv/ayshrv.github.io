@@ -237,7 +237,7 @@
     </div>
     <div class="columns is-centered">
       <div class="content">
-        <h2 class="title is-4">Qualitative Comparisons with SDXL + Dr.Bokeh.</h2>
+        <h2 class="title is-4">Qualitative Comparisons with SDXL + Dr.Bokeh</h2>
         <!-- Any description here -->
       </div>
     </div>
@@ -262,6 +262,43 @@
             <div class="grid1x1-sdxl">
              <div class="video-with-label">
                <img src="/static/defocus-blur-gen/imgs/results-sdxl-3.png" width="100%" alt="Ours vs SDXL result">
+             </div>
+            </div>
+          </div>
+        </div>
+        <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+        <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+      </div>
+      <!-- <p style="text-align: center; ">(Frame transition: 1.5 sec)</p> -->
+      <div class="slider-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-4">Qualitative Comparisons with Camera Settings as Tokens</h2>
+        <!-- Any description here -->
+      </div>
+    </div>
+    <div class="slider-section">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <div class="grid1x1-csat">
+             <div class="video-with-label">
+               <img src="/static/defocus-blur-gen/imgs/results-csat-1.png" width="100%" alt="Ours vs SDXL result">
+             </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="grid1x1-csat">
+             <div class="video-with-label">
+               <img src="/static/defocus-blur-gen/imgs/results-csat-2.png" width="100%" alt="Ours vs SDXL result">
              </div>
             </div>
           </div>
@@ -356,6 +393,17 @@
     gap: 16px;
     width: 100%;
     max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .grid1x1-csat {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 800px;
     height: 100%;
     margin: 0 auto;
   }
@@ -476,16 +524,6 @@
     width: auto;
     height: 100%;
     object-fit: contain;
-  }
-  
-  .teaser-grid-2x2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 16px;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
   }
   
   .hero.teaser .hero-body {
