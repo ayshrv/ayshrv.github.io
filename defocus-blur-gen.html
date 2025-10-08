@@ -226,7 +226,6 @@
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -237,7 +236,7 @@
     </div>
     <div class="columns is-centered">
       <div class="content">
-        <h2 class="title is-4">Qualitative Comparisons with SDXL + Dr.Bokeh</h2>
+        <h2 class="title is-4">Comparisons with SDXL + Dr.Bokeh</h2>
         <!-- Any description here -->
       </div>
     </div>
@@ -281,7 +280,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="content">
-        <h2 class="title is-4">Qualitative Comparisons with Camera Settings as Tokens</h2>
+        <h2 class="title is-4">Comparisons with Camera Settings as Tokens</h2>
         <!-- Any description here -->
       </div>
     </div>
@@ -315,6 +314,341 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-4" style="text-align: center;">Comparison with EBB! Dataset</h2>
+        <p style="text-align: center; font-size: 0.9rem; margin-bottom: 2em;">
+          Drag the slider on the images to compare all-in-focus and defocused images.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="slider-section">
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slide">
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/0_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/0_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/20_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/20_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid1x2 columns prompt-row">
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A red and gray fire hydrant is positioned next to a dense green hedge along a sidewalk. The hydrant has a red cap. The surrounding area includes a concrete curb and scattered leaves on the pavement.</div>
+                </div>
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> Vibrant pink rose blooming in a lush garden, surrounded by green foliage and a rustic wooden fence.</div>
+                </div>
+              </div>
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-0.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-0.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-20.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-20.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/38_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/38_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/46_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/46_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid1x2 columns prompt-row">
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> Urban graffiti on a concrete block near a road, with greenery sprouting around its base.</div>
+                </div>
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A green wheeled trash bin is placed on the street in front of a house with a brown wooden door and a gray and brown picket fence. The house has a peach-colored exterior with white window shutters. Another gray trash bin is partially visible behind the fence.</div>
+                </div>
+              </div>
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-38.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-38.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-46.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-46.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/63_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/63_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/68_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/68_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid1x2 columns prompt-row">
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A weathered stone sphere with patches of moss, set against a backdrop of autumn foliage and a modern building.</div>
+                </div>
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A gray Nissan Juke parked on a residential street with a hedge and house in the background.</div>
+                </div>
+              </div>
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-63.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-63.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-68.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-68.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/73_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/73_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/94_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/94_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid1x2 columns prompt-row">
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> Red and white bollard next to a tree with fallen autumn leaves on the ground.</div>
+                </div>
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A weathered stone lantern, standing tall amidst the vibrant autumn foliage.</div>
+                </div>
+              </div>
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-73.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-73.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-94.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-94.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/180_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/180_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">Generated image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/ours/194_ap1.8.png" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/ours/194_ap16.png" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid1x2 columns prompt-row">
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A yellow pole stands in a park surrounded by trees and greenery.</div>
+                </div>
+                <div class="column">
+                  <div class="prompt-box"><b>Prompt:</b> A fire hydrant with the number 674 on it stands in a wooded area with trees and bushes in the background.</div>
+                </div>
+              </div>
+              <div class="grid1x2">
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g1">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-180.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-180.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="compare-header">
+                    <div class="compare-label left">Aperture: f/1.8</div>
+                    <div class="compare-label center">EBB! dataset image</div>
+                    <div class="compare-label right">Aperture: f/16</div>
+                  </div>
+                  <div class="compare-container" data-sync-group="g2">
+                    <img class="compare-base" src="/static/defocus-blur-gen/imgs/real/bokeh-194.jpg" alt="Defocused">
+                    <img class="compare-image right" src="/static/defocus-blur-gen/imgs/real/sharp-194.jpg" alt="All-in-focus">
+                    <div class="compare-handle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+          <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
 
     <div class="columns is-centered">
       <div class="content">
@@ -344,7 +678,7 @@
         <h2 class="title is-4">More Examples</h2>
       </div>
     </div>
-        <div class="content" style="margin-top: 0; padding-top: 0;">
+        <div class="content" style="margin-top: -3em; padding-top: 0;">
           <div class="image is-centered mt-6" style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">
             <video id="qual-examples" autoplay muted loop playsinline height="100%">
               <source src="/static/defocus-blur-gen/videos/qual-examples.mp4" type="video/mp4">
@@ -354,6 +688,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -420,9 +756,7 @@
   .slide {
     min-width: 100%;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     height: 100%;
     width: 100%;
   }
@@ -467,6 +801,17 @@
     gap: 16px;
     width: 100%;
     max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .grid1x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 850px;
     height: 100%;
     margin: 0 auto;
   }
@@ -638,6 +983,135 @@
     document.querySelectorAll('.slider-section').forEach(initSlider);
   });
   </script>
+
+<style>
+  /* Image compare slider (before/after) */
+  .compare-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    background: #111;
+  }
+  .compare-base {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .compare-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .compare-image.right {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+  .compare-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    cursor: ew-resize;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+  .compare-handle::after {
+    content: '↔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.7);
+    color: #111827;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin: 4px 0 6px 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-top: 1em;
+  }
+  .compare-label.left { justify-self: start; font-size: 0.85rem; }
+  .compare-label.center { justify-self: center; position: relative; top: -25px; }
+  .compare-label.right { justify-self: end; font-size: 0.85rem; }
+  .prompt-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1em;
+    padding: 12px 12px;
+    font-size: 0.8rem;
+    background: #fafafa;
+  }
+  .prompt-row {
+    margin-bottom: 8px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize sync logic per slide so group names can be reused
+    document.querySelectorAll('.slide').forEach(slide => {
+      const compareBlocks = slide.querySelectorAll('.compare-container');
+
+      function setPosition(block, percent) {
+        const handle = block.querySelector('.compare-handle');
+        const overlay = block.querySelector('.compare-image.right');
+        handle.style.left = percent + '%';
+        overlay.style.clipPath = `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;
+      }
+
+      function broadcast(sourceBlock, percent) {
+        const group = sourceBlock.getAttribute('data-sync-group');
+        if (!group) return;
+        slide.querySelectorAll(`.compare-container[data-sync-group="${group}"]`).forEach(peer => {
+          if (peer !== sourceBlock) setPosition(peer, percent);
+        });
+      }
+
+      compareBlocks.forEach(block => {
+        const handle = block.querySelector('.compare-handle');
+        let isDragging = false;
+
+        const start = () => { isDragging = true; };
+        const stop = () => { isDragging = false; };
+        const move = (e) => {
+          if (!isDragging) return;
+          const rect = block.getBoundingClientRect();
+          const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+          let x = clientX - rect.left;
+          x = Math.max(0, Math.min(x, rect.width));
+          const percent = (x / rect.width) * 100;
+          setPosition(block, percent);
+          broadcast(block, percent);
+        };
+
+        handle.addEventListener('mousedown', start);
+        handle.addEventListener('touchstart', start, { passive: true });
+        window.addEventListener('mouseup', stop);
+        window.addEventListener('touchend', stop);
+        window.addEventListener('mousemove', move);
+        window.addEventListener('touchmove', move, { passive: false });
+      });
+    });
+  });
+</script>
 
 
 <footer class="footer">
