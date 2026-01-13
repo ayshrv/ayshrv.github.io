@@ -122,6 +122,13 @@ h1,h2,h3, h4{
   font-size: 16px;
 }
 
+.navbar-spacer {
+    height: 60px;
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
 /* Mobile responsive styles */
 @media (max-width: 767px) {
   html, body {
@@ -131,7 +138,7 @@ h1,h2,h3, h4{
   }
   
   body {
-    padding-top: 50px;
+    padding-top: 80px;
   }
   
   .content {
@@ -197,11 +204,56 @@ h1,h2,h3, h4{
   .navbar {
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
+  }
+  
+  /* Spacer div to prevent navbar overlap */
+  .navbar-spacer-mobile {
+    height: 60px;
+    margin-bottom: 60px;
+    display: block;
+    clear: both;
+  }
+  
+  .navbar-header {
+    width: 100%;
+    text-align: center;
   }
   
   .navbar-brand {
     font-size: 16px;
     padding: 10px 5px;
+    display: inline-block;
+    float: none;
+  }
+  
+  /* Keep navbar open (expanded) on mobile */
+  .navbar-toggle {
+    display: none !important;
+  }
+  
+  .navbar-collapse {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    text-align: center;
+  }
+  
+  .navbar-nav {
+    float: none !important;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .navbar-nav > li > a {
+    padding: 10px 8px;
   }
   
   /* Fix panel footer */
