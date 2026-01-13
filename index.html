@@ -102,6 +102,8 @@ body{
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
   padding-top: 70px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .title_bar_text{
@@ -119,9 +121,213 @@ h1,h2,h3, h4{
   margin-left: 30px;
   font-size: 16px;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 767px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  body {
+    padding-top: 50px;
+  }
+  
+  .content {
+    margin-left: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    word-wrap: break-word;
+  }
+  
+  .content_heading {
+    margin-left: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    word-wrap: break-word;
+  }
+  
+  .title_bar_text {
+    margin-left: 10px;
+  }
+  
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .thumb {
+    margin: 10px 0;
+  }
+  
+  p {
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  
+  #news_list li, #achievements_list li {
+    font-size: 14px;
+  }
+  
+  /* Fix Bootstrap columns on mobile */
+  .col-sm-3, .col-sm-4, .col-sm-8, .col-sm-9 {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Ensure row doesn't overflow */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Fix navbar on mobile */
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+  
+  /* Fix panel footer */
+  .panel-footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+  
+  /* Make buttons stack on mobile */
+  .btn {
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+  
+  /* Fix social buttons */
+  .btn-social-icon {
+    margin: 5px;
+    display: inline-block;
+  }
+  
+  /* Fix headings */
+  h2, h3, h4 {
+    padding-left: 15px;
+    padding-right: 15px;
+    word-wrap: break-word;
+  }
+  
+  /* Fix section headings */
+  .section_heading {
+    padding-top: 20px;
+  }
+  
+  /* Fix CV icon size on mobile */
+  .content img[src*="cv_logo"] {
+    height: 25px !important;
+    max-width: 25px !important;
+  }
+  
+  /* Limit profile image size on mobile */
+  .col-sm-3 img[src*="ayush.jpg"] {
+    max-width: 400px !important;
+    width: 100%;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Google Scholar SVG scales automatically with font-size like Font Awesome icons */
+  .btn-google-scholar svg {
+    width: 1em;
+    height: 1em;
+    fill: #fff;
+  }
+  
+  /* Fix education images - make them smaller on mobile */
+  .col-sm-3[align="center"] img[src*="experience/umich"],
+  .col-sm-3[align="center"] img[src*="experience/gt"],
+  .col-sm-3[align="center"] img[src*="experience/iitbhu"] {
+    max-width: 100px !important;
+    width: 100px !important;
+    height: auto !important;
+  }
+  
+  /* Also fix experience images on mobile */
+  .col-sm-3[align="center"] img[src*="experience/adobe"],
+  .col-sm-3[align="center"] img[src*="experience/amazon"] {
+    max-width: 100px !important;
+    width: 100px !important;
+    height: auto !important;
+  }
+  
+  /* Add top margin to date paragraphs in education and experience */
+  .col-sm-3[align="center"] p,
+  .col-sm-3 > p {
+    margin-top: 10px !important;
+    margin-bottom: 5px;
+  }
+  
+  /* Ensure social icons don't get cut off */
+  .btn-social-icon {
+    overflow: visible;
+    padding: 5px;
+  }
+}
 .section_heading{
   padding-top: 40px;
 }
+
+/* Add top margin to date paragraphs in education and experience (desktop view) */
+.col-sm-3[align="center"] p,
+.col-sm-3 > p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Center align the image columns vertically in experience and education rows */
+#experience .row:not(:first-child),
+#education .row:not(:first-child) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#experience .row:not(:first-child) > .col-sm-9,
+#education .row:not(:first-child) > .col-sm-9 {
+  display: flex;
+  flex-direction: column;
+}
+
+#experience .row:not(:first-child) > .col-sm-3[align="center"],
+#education .row:not(:first-child) > .col-sm-3[align="center"] {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#experience .row:not(:first-child) > .col-sm-3[align="center"] img,
+#education .row:not(:first-child) > .col-sm-3[align="center"] img {
+  margin: 0 auto;
+  display: block;
+}
+
 img{
   vertical-align: middle !important;
 }
@@ -157,6 +363,30 @@ p{
 }
 .white-text{
   color: white;
+}
+
+/* Google Scholar icon styling to match Font Awesome icons */
+.btn-google-scholar {
+  background-color: #4285F4;
+  color: #fff;
+  border-color: #4285F4;
+}
+
+.btn-google-scholar:hover,
+.btn-google-scholar:focus,
+.btn-google-scholar:active {
+  background-color: #357ae8;
+  border-color: #357ae8;
+  color: #fff;
+}
+
+.btn-google-scholar svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: #fff;
+  margin-top: 5px;
 }
 
 a:not(.navbar-brand):not(.btn-social-icon):not(.github-button):not(.link-btn){
